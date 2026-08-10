@@ -515,6 +515,7 @@ struct wacom_i2c {
 	volatile bool ble_block_flag;
 	bool ble_charging_state;
 	bool ble_disable_flag;
+	bool charging;
 
 	/* for tui or factory test */
 	bool epen_blocked;
@@ -683,4 +684,5 @@ int wacom_check_ub(struct i2c_client *client);
 void wacom_swap_compensation(struct wacom_i2c *wac_i2c, char cmd);
 #if 1 // WACOM_PDCT_ENABLE
 int wacom_ble_charge_mode(struct wacom_i2c *wac_i2c, int mode);
+int start_epen_ble_charging(struct wacom_i2c *wac_i2c);
 #endif
